@@ -1,0 +1,31 @@
+﻿using Attractions.Web.Entities.Model;
+using Attractions.Web.Repository;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Attractions.Web.Processor
+{
+    public class AttractionsProcessor :IAttractionsProcessor
+    {
+        private IGoogleRepository googleRepository;
+        private IAttractionsRepository attractionsRepository;
+
+        public AttractionsProcessor(IGoogleRepository googleRepository, IAttractionsRepository attractionsRepository)
+        {
+            this.attractionsRepository = attractionsRepository;
+            this.googleRepository = googleRepository;
+        }
+        public async Task<AttractionsIndexModel> GetAttractionsIndexModel()
+        {
+            var model = new AttractionsIndexModel()
+            {
+                //Listings = this.attractionsRepository.GetListings(),
+                //Locations = this.googleRepository
+            };
+            return model;
+        }
+    }
+}
