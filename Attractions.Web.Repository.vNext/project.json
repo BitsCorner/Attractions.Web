@@ -1,0 +1,18 @@
+﻿{
+    "dependencies": {
+        "Attractions.Web.Entities.vNext": "1.0.0-alpha3"
+    },
+
+    "frameworks" : {
+        "net451" : { 
+            "dependencies": {
+            }
+        },
+        "k10" : { 
+            "dependencies": {
+                "System.Runtime": "4.0.20.0",
+                "System.Threading.Tasks": "4.0.10.0"
+            }
+        }
+    }
+}
