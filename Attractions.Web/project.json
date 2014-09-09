@@ -11,7 +11,8 @@
         "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-alpha3",
         "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0-alpha2",
         "Attractions.Web.Processor.vNext": "1.0.0-alpha3",
-        "Attractions.Web.Entities.vNext": "1.0.0-alpha3"
+        "Attractions.Web.Entities.vNext": "1.0.0-alpha3",
+        "Attractions.Web.Utility": "1.0.0-alpha3"
     },
     "commands": {
         /* Change the port number when you are self hosting this application */
