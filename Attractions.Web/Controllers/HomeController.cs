@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNet.Mvc;
+using Attractions.Web.Entities.Model;
 
 namespace Attractions.Web.Controllers
 {
@@ -9,6 +10,7 @@ namespace Attractions.Web.Controllers
     {
         public IActionResult Index()
         {
+            ViewData.Model = new AttractionsIndexModel();
             return View();
         }
 
