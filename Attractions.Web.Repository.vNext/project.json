@@ -1,6 +1,7 @@
 ﻿{
     "dependencies": {
-        "Attractions.Web.Entities.vNext": "1.0.0-alpha3"
+        "Attractions.Web.Entities.vNext": "1.0.0-alpha3",
+        "Attractions.Web.Utility":  ""
     },
 
     "frameworks" : {

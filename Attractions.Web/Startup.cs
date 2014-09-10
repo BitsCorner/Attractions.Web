@@ -8,6 +8,9 @@ using Microsoft.Data.Entity;
 using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Attractions.Web.Models;
+using Attractions.Web.Processor;
+using Attractions.Web.Repository;
+using Attractions.Web.Utility;
 
 namespace Attractions.Web
 {
@@ -39,6 +42,13 @@ namespace Attractions.Web
 
                 // Add MVC services to the services container
                 services.AddMvc();
+
+                // Unity mappings
+                services.AddTransient<IAttractionsProcessor, AttractionsProcessor>();
+                services.AddTransient<IGoogleRepository, GoogleRepository>();
+                services.AddTransient<IAttractionsRepository, AttractionsRepository>();
+                services.AddTransient<IHttpClientHelper, HttpClientHelper>();
+
             });
 
             // Enable Browser Link support
@@ -69,4 +79,5 @@ namespace Attractions.Web
 
         }
     }
+
 }
