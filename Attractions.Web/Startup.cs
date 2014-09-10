@@ -66,6 +66,7 @@ namespace Attractions.Web
                     name: "api",
                     template: "{controller}/{id?}");
             });
+
         }
     }
 }

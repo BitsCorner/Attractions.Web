@@ -1,4 +1,5 @@
 ﻿using Attractions.Web.Entities.Model;
+using Attractions.Web.Entities;
 using Attractions.Web.Repository;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,11 @@ namespace Attractions.Web.Processor
                 //Locations = this.googleRepository
             };
             return model;
+        }
+
+        public async Task<IEnumerable<Location>> GetLocations(string location)
+        {
+            return await googleRepository.GetLocations(location);
         }
     }
 }
