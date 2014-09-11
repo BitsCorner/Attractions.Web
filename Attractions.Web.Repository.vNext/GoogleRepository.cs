@@ -16,16 +16,23 @@ namespace Attractions.Web.Repository
         {
             this.httpClient = httpClient;
         }
-        public async Task<IEnumerable<Location>> GetLocations(string location)
+        public async Task<IEnumerable<LocationPrediction>> GetLocations(string location)
         {
-            var url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+ location + "&types=(cities)&key=" + "AIzaSyBQVuVXZpAZxhKuv5h6gVct0IUSrHbUUyc";
+            //var url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+ location + "&types=(cities)&key=" + "AIzaSyBQVuVXZpAZxhKuv5h6gVct0IUSrHbUUyc";
+            var url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + location + "&types=(cities)&key=" + "AIzaSyCmRdR33uhc0Bd7V_RkDu3q2xXwb1Tjmms";
+            
             var result = await this.httpClient.CallHttpClientGet(url);
-            //if (result.StatusCode != HttpStatusCode.OK)
-            //{
-            //}
             var content = await result.Content.ReadAsStringAsync();
-            var locations = JsonConvert.DeserializeObject<IEnumerable<Location>>(content);
-            return locations;
+            try
+            {
+                var locations = JsonConvert.DeserializeObject<Predictions>(content);
+                return locations.predictions;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
     }
 }

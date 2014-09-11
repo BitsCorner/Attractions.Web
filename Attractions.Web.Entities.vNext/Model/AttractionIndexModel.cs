@@ -8,6 +8,6 @@ namespace Attractions.Web.Entities.Model
     {
         public IEnumerable<Location> Locations { get; set; }
         public IEnumerable<Listing> Listings { get; set; }
-
+        public string SearchedLocation { get; set; }
     }
 }

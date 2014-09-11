@@ -28,7 +28,7 @@ namespace Attractions.Web.Processor
             return model;
         }
 
-        public async Task<IEnumerable<Location>> GetLocations(string location)
+        public async Task<IEnumerable<LocationPrediction>> GetLocations(string location)
         {
             return await googleRepository.GetLocations(location);
         }

@@ -24,7 +24,8 @@ namespace Attractions.Web.Controllers
 
         public async Task<JsonResult> AutocompleteLocations(string location)
         {
-            return new JsonResult(await this.attractionsProcessor.GetLocations(location));
+            var result = await this.attractionsProcessor.GetLocations(location);
+            return new JsonResult(result.Select(m=>m.description).AsEnumerable());
         }
 
         public IActionResult About()

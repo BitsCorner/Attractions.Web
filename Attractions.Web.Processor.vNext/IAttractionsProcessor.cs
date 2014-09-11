@@ -11,6 +11,6 @@ namespace Attractions.Web.Processor
     {
         Task<AttractionsIndexModel> GetAttractionsIndexModel();
 
-        Task<IEnumerable<Location>> GetLocations(string location);
+        Task<IEnumerable<LocationPrediction>> GetLocations(string location);
     }
 }

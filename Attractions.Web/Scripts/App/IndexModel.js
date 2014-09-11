@@ -26,10 +26,15 @@
     //};
 
     IndexModel.prototype.placeChange = function (data, event) {
+        var location = $('#place').val();
         $.ajax({
-            url: "/Home/AutocompleteLocations?location=coquitlam", //App.Action("Home", "AutocompleteLocations"), //ActionsURL.AutocompleteLocationsUrl + "?location=coquitlam",
+            url: "/Home/AutocompleteLocations?location=" + location, //App.Action("Home", "AutocompleteLocations"), //ActionsURL.AutocompleteLocationsUrl + "?location=coquitlam",
             success: function (data) {
-                alert(data);
+
+                $("#place").autocomplete(
+                    {
+                        source: data
+                    });
             }
         });
     };
