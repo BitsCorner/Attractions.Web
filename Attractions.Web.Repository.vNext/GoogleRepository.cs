@@ -18,7 +18,7 @@ namespace Attractions.Web.Repository
         }
         public async Task<IEnumerable<Location>> GetLocations(string location)
         {
-            var url = "";
+            var url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+ location + "&types=(cities)&key=" + "AIzaSyBQVuVXZpAZxhKuv5h6gVct0IUSrHbUUyc";
             var result = await this.httpClient.CallHttpClientGet(url);
             //if (result.StatusCode != HttpStatusCode.OK)
             //{
